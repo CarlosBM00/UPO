@@ -1,0 +1,26 @@
+/*Localizar un número dentro de un vector, indicar si se encuentra o no y la posición en la que se encuentra*/
+
+#include <stdio.h>
+#define TAM 10
+
+int main(){
+
+int i, n, superado, posicion;
+
+int v[TAM] = {1,2,3,4,5,6,7,8};
+
+printf("Número a buscar: ");
+scanf("%d", &n);
+
+for(i=0;i<TAM;i++){
+        if(v[i]==n){
+            superado = 1;
+            posicion = i;
+        }
+}
+if(superado == 1)
+printf("Existe un valor igual al buscado, su posición es %d", posicion);
+else
+printf("No existe un valor igual al buscado");
+  return 0;
+}

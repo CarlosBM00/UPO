@@ -1,0 +1,33 @@
+/*Localizar un número dentro de una matriz, indicar si se encuentra o no y la posición en la que se encuentra*/
+
+#include <stdio.h>
+#define nfil 2
+#define ncol 4
+
+
+int main(){
+
+int i, j, n, superado, x, y;
+
+int m[nfil][ncol] = {{0,1,2,3},{7,5,4,9}};
+
+printf("Número a buscar: ");
+scanf("%d", &n);
+
+for(i=0;i<nfil;i++){
+    for(j=0;j<ncol;j++){
+        printf("%d", m[i][j]);
+        if(m[i][j]==n){
+            superado = 1;
+            x = i+1;
+            y = j+1;
+        }
+    }
+    printf("\n");
+}
+if(superado == 1)
+printf("Existe un valor igual al buscado, su posición es Fila:%d, Columna:%d)", x, y);
+else
+printf("No existe un valor igual al buscado");
+  return 0;
+}

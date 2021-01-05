@@ -1,0 +1,32 @@
+// Algoritmo que visualice el valor máximo y mínimo de un conjunto de números reales introducidos por teclado. La lectura concluirá cuando se hayan leído un máximo de cien números (usar una constante) o algún número negativo.
+
+#include <stdio.h>
+
+int a, k = 100, contador=1, min=999999999, max=0, exito = 0;
+
+int main(){
+
+  while(contador <= k && !exito){
+
+    printf("Número %d:", contador);
+    scanf("%d", &a);
+
+    if(a<0)
+    exito = 1;
+
+    if (a<min && a>0) 
+    min = a;
+
+    if (a>max)
+    max = a;
+
+    
+    
+    contador++;
+  }
+
+  printf("Valor máximo: %d\n", max);
+  printf("Valor mínimo: %d", min);
+
+  return 0;
+}

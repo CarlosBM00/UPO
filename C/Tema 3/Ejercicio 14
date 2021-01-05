@@ -1,0 +1,19 @@
+// Escribir un programa que muestre las tablas de multiplicar de los números del 1 al 10.
+
+#include <stdio.h>
+#include <math.h>
+
+int i, j, mult;
+
+int main(){
+
+  for (i=1;i<=10;i++){
+    printf("---------------------------\n");
+    printf("Tabla de multiplicar del %d\n", i);
+    for(j=1;j<=10;j++){
+      mult = i*j;
+      printf("%d x %d = %d\n", i, j, mult);
+    }
+  }
+  return 0;
+}

@@ -1,0 +1,22 @@
+// Mostrar por pantalla un número entero aleatorio comprendido entre a y b (leídos por teclado).
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+int a, b, num;
+
+srand (time(NULL));
+
+printf("Primer número: ");
+scanf("%d", &a);
+printf("Segundo número: ");
+scanf("%d", &b);
+
+num = a + rand() % (b-a+1);
+
+printf("Número aleatorio: %d", num);
+
+  return 0;
+}

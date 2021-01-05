@@ -1,0 +1,35 @@
+/*Leer una matriz de números enteros por teclado (cuyas dimensiones son también solicitadas por teclado al
+principio) e imprimir la suma total de sus elementos*/
+
+#include <stdio.h>
+
+
+int main(){
+
+int i, j, nfil, ncol, sum;
+
+    printf("Número de filas: ");
+    scanf("%d",&ncol);
+    printf("Número de columnas: ");
+    scanf("%d",&nfil);
+
+int matriz[nfil][ncol];
+
+    for(i=0 ; i<nfil ; i++){
+        for(j=0 ; j<ncol ; j++){
+            printf("Número: ");
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    for(i=0; i<nfil; i++){
+        for(j=0;j<ncol;j++){
+            printf("%d", matriz[i][j]);
+            sum = sum + matriz[i][j];
+        }
+        printf("\n");
+    }
+
+    printf("Suma total: %d", sum);
+  return 0;
+}

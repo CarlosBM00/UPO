@@ -1,0 +1,31 @@
+/* Implementar una función que devuelva la cantidad de segundos que hay en h horas, m minutos y s segundos.
+Implementar una función main para probar el funcionamiento con datos leídos desde teclado */
+
+#include<stdio.h>
+
+int segundos (int h, int m, int s);
+
+int main(){
+int h, m, s;
+
+printf("Horas: ");
+scanf("%d", &h);
+printf("Minutos: ");
+scanf("%d", &m);
+printf("Segundos: ");
+scanf("%d", &s);
+
+printf("Total de segundos: %d", segundos(h,m,s));
+
+return 0;
+}
+
+int segundos (int h, int m, int s){
+int aux;
+
+aux = h * 60;
+s = (aux*60) + (m*60) + s;
+
+return s;
+}
+

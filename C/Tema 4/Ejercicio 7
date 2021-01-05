@@ -1,0 +1,31 @@
+/*Dados tres vectores crecientes de números enteros, determinar el mínimo número común a las tres, supuesto
+que existe al menos uno.*/
+
+#include <stdio.h>
+#define TAM 6
+
+
+int main(){
+
+int i, j, k, a;
+
+int v1[TAM]={1, 3, 4, 7, 9, 15};
+int v2[TAM]={2, 4, 1, 9, 11, 13};
+int v3[TAM]={4, 7, 9, 1, 25, 30};
+
+for(i=0 ; i<TAM ; i++){
+    for(j=0; j<TAM; j++){
+        if(v1[i] == v2[j] && v1[i]< a){
+            a = v2[j];
+        }
+        for(k=0 ; k<TAM; k++){
+            if(v3[k] == a){
+            }
+        }
+    }
+}
+printf("Mínimo número común: %d\n",a);
+
+
+  return 0;
+}

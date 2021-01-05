@@ -1,0 +1,40 @@
+/* Escribir una función que devuelva cuál es la fila que contiene el mínimo de una matriz y la columna que
+contiene el máximo de la matriz. */
+
+#include <stdio.h>
+#define NFIL 100
+#define NCOL 100
+
+void minmax(int m[NFIL][NCOL], int * colmin, int * colmax);
+
+int main(){
+int colmin, colmax;
+int m[NFIL][NCOL] = {{2,6,2},
+                     {1,3,7}};
+
+minmax(m, &colmin, &colmax);
+printf("\nColumna del maximo: %d", colmax);
+printf("\nFila del minimo: %d", colmin);
+
+return 0;
+}
+
+void minmax(int m[NFIL][NCOL], int * colmin, int * colmax){
+int i, j, min, max;
+
+min = 999999999;
+max = 0;
+
+    for(i=0; i<NFIL ; i++){
+        for(j=0; j<NCOL; j++){
+                if(m[i][j]>max){
+                    max = m[i][j];
+                    *colmax = j;
+                }
+        }
+        if(m[i][j]<min){
+                     min = m[i][j];
+                    *colmin = i;
+                }
+    }
+}

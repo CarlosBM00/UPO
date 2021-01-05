@@ -1,0 +1,23 @@
+// Calcular el número de cifras de un número n leído por teclado.
+
+#include <stdio.h>
+
+int main(){
+
+  int n, contador = 1;
+
+  printf("Número: ");
+  scanf("%d",&n);
+
+  while(n/10>0){
+
+    contador++;
+
+    n=n/10;
+
+  }
+
+  printf("Número de dígitos: %d", contador);
+
+  return 0;
+}

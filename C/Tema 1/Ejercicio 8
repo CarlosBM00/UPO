@@ -1,0 +1,25 @@
+// Calcular la desviación típica de tres números reales leídos por teclado.
+
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+
+  float a, b , c, media, varianza, resultado;
+
+  printf("Número 1: ");
+  scanf("%f", &a);
+  printf("Número 2: ");
+  scanf("%f", &b);  
+  printf("Número 3: ");
+  scanf("%f", &c); 
+
+  media = (a+b+c)/3;
+  varianza = (pow(a-media,2)+pow(b-media,2)+pow(c-media,2)/3);
+  resultado = sqrt(varianza);
+
+  printf("La desviación típica de esos tres números es: %.2f", resultado);
+
+  return 0; 
+}
+

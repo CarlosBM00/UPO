@@ -1,0 +1,45 @@
+// Dados dos instantes de tiempo con sus horas, minutos y segundos (h1:m1:s1 y h2:m2:s2), leídos por teclado, obtener el número de horas, minutos y segundos comprendido entre ambos instantes. 
+
+#include <stdio.h>
+
+int main (){
+
+int h, m, s, h1, m1 , s1, h2, m2 , s2, resultado, aux;
+
+  printf("Horas instante 1: ");
+  scanf("%d", &h1);
+  printf("Minutos instante 1: ");
+  scanf("%d", &m1);
+  printf("Segundos instante 1: ");
+  scanf("%d", &s1);
+  printf ("El primer instante introducido es %d:%d:%d\n", h1, m1, s1);
+
+  printf("Horas instante 2: ");
+  scanf("%d", &h2);
+  printf("Minutos instante 2: ");
+  scanf("%d", &m2);
+  printf("Segundos instante 2: ");
+  scanf("%d", &s2);
+  printf ("El segundo instante introducido es %d:%d:%d\n", h2, m2, s2);
+
+  // 
+  h1 = h1*60;
+  m1 = m1+h1;
+  s1 = (m1 * 60) + s1;
+
+  h2 = h2*60;
+  m2 = m2+h2;
+  s2 = (m2 * 60) + s2;
+
+  resultado = s2 - s1;
+
+  aux = resultado;
+  s=aux%60;
+  aux=aux/60;
+  m=aux%60;
+  h=aux/60;
+
+  printf ("El número de segundos comprendido entre ambos instantes es %d , es decir, %d horas, %d minutos y %d segundos", resultado, h, m, s);
+
+  return 0;
+}

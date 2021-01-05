@@ -1,0 +1,30 @@
+/* Algoritmo que indique si existe un cuadrado perfecto en un vector*/
+
+#include<stdio.h>
+#include<math.h>
+
+#define N 10
+
+int main(){
+
+int i, num, exito;
+
+int v[N]={1,2,3,4,5,6,7,8,9,10};
+
+exito = 0;
+i=0;
+while(!exito && i < N){
+    num = sqrt(v[i]);
+    if(num%v[i]==0){
+        printf("%d es un cuadrado perfecto", v[i]);
+        exito = 1;
+    }else
+        i++;
+}
+
+
+if(!exito)
+    printf("No se ha encontrado ningún cuadrado perfecto");
+
+return 0;
+}

@@ -1,0 +1,24 @@
+/* Implementar una función que devuelva la media aritmética de dos números enteros. Implementar una
+función main para probar el funcionamiento con datos leídos desde teclado. */
+
+#include<stdio.h>
+
+float media (int a, int b);
+
+int main(){
+int a, b;
+
+printf("Número 1: ");
+scanf("%d", &a);
+printf("Número 2: ");
+scanf("%d", &b);
+
+printf("La media es %f", media(a,b));
+
+return 0;
+}
+
+float media (int a, int b){
+
+return (a+b)/2;
+}

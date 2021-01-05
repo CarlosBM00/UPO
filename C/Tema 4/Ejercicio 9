@@ -1,0 +1,30 @@
+/* Algoritmo que calcule el máximo y el mínimo de un vector de N reales leído por teclado.  */
+
+#include <stdio.h>
+
+int main() {
+
+int n,i, max , min;
+
+printf("Número de numeros: ");
+scanf("%d", &n);
+
+int v[n];
+
+max = 0;
+min = 999999999;
+
+for(i=0;i<n;i++){
+    printf("Número %d: ",i+1);
+    scanf("%d", &v[i]);
+
+    if(max<v[i])
+        max=v[i];
+    if(min>v[i])
+        min=v[i];
+}
+
+printf("Max: %d, Min: %d", max , min);
+
+return 0;
+}

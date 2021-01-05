@@ -1,0 +1,39 @@
+/*Leer una secuencia de números reales introducidos por teclado (cuya longitud es también solicitada por teclado al principio) y mostrar la desviación típica de los números de dicha secuencia.*/
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+int n, i;
+float media, varianza, acumulador, cont, sumtotal, result ;
+
+printf("Número de valores que deseas introducir: ");
+scanf("%d", &n);
+
+float v[n];
+
+for(i=0 ; i<n; i++){
+
+  printf("Valor %d: ", i+1);
+  scanf("%f", &v[i]);
+
+  cont++;
+
+  sumtotal=sumtotal+v[i];
+
+  if(v[i]==n){
+  media = sumtotal/cont;
+  }
+}
+
+for(i=0 ; i<n; i++){
+
+    varianza = pow(v[i]-media,2);
+    acumulador = acumulador + varianza;
+}
+  result = sqrt(acumulador/cont);
+
+  printf("Desviación típica: %.2f\n", result);
+  return 0;
+}

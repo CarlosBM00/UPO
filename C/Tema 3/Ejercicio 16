@@ -1,0 +1,25 @@
+// Mostrar los números primos que existen entre a y b (a y b leídos por teclado).
+
+#include <stdio.h>
+
+int a, b, i, j, cont;
+
+int main(){
+
+  printf("Número 1: ");
+  scanf("%d",&a);
+  printf("Número 2: ");
+  scanf("%d",&b);
+
+  for (i=a;i<=b;i++){
+    cont = 0;
+    for(j=1;j<=i;j++){
+      if(i%j==0)
+        cont++;
+    }
+    if(cont==2)
+      printf("%d ", i);
+  }
+  return 0;
+}
+

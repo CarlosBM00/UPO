@@ -1,0 +1,31 @@
+/* Escribir una función que reciba un importe en euros y un porcentaje de descuento, y modifique el importe
+recibido (sustituyendo su valor original) aplicándole el porcentaje de descuento. */
+
+#include <stdio.h>
+
+void descuento (float * euros, float porcentaje);
+
+int main(){
+
+float euros, porcentaje;
+
+printf("Euros: ");
+scanf("%f", &euros);
+printf("Porcentaje de descuento: ");
+scanf("%f", &porcentaje);
+
+descuento(&euros, porcentaje);
+
+printf("Al aplicar el porcentaje, el importe es de: %.2f", euros);
+
+return 0;
+}
+
+void descuento (float * euros, float porcentaje){
+float reduc;
+
+reduc = *euros * (porcentaje/100);
+
+*euros = *euros - reduc;
+
+}

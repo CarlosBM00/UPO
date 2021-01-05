@@ -1,0 +1,44 @@
+/* Definir una estructura llamada Asignatura que permita almacenar el nombre de una asignatura, el curso y el
+semestre al que pertenece, así como la calificación obtenida en la misma y el número de matriculaciones realizadas en
+dicha asignatura. Decida el tipo de dato más apropiado para cada campo de la estructura. Escribir un programa completo
+en el que se cree una variable de tipo Asignatura, se rellene con datos leídos desde teclado y se imprima finalmente su
+contenido por pantalla */
+
+#include <stdio.h>
+#define TAM 20
+
+
+typedef struct{
+
+char nombre[TAM];
+int curso, semestre, nmatriculaciones;
+float calificacion;
+
+} Asignatura;
+
+int main(){
+
+Asignatura p;
+
+printf("Nombre de la asignatura: ");
+scanf("%s", p.nombre);
+printf("Curso: ");
+scanf("%d", &p.curso);
+printf("Semestre: ");
+scanf("%d", &p.semestre);
+printf("Numero de matriculaciones: ");
+scanf("%d", &p.nmatriculaciones);
+printf("Calificacion: ");
+scanf("%f", &p.calificacion);
+
+printf("\n-------------");
+
+printf("\nNombre de la asignatura: %s", p.nombre);
+printf("\nCurso: %d", p.curso);
+printf("\nSemestre: %d", p.semestre);
+printf("\nNumero de matriculaciones: %d", p.nmatriculaciones);
+printf("\nCalificacion: %.2f", p.calificacion);
+
+printf("\n-------------\n");
+return 0;
+}

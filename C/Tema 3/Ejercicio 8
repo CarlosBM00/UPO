@@ -1,0 +1,22 @@
+// Algoritmo que calcule el producto de dos números a y b (sin utilizar el operador de multiplicación *).
+
+#include <stdio.h>
+
+int main(){
+
+  int i, a, b, cont, sum=0;
+
+  printf("Número 1: ");
+  scanf("%d", &a);
+  printf("Número 2: ");
+  scanf("%d", &b);
+
+  while(cont != b){
+    sum = sum + a;
+    cont++;
+  }
+
+  printf("Resultado: %d", sum);
+
+  return 0;
+}

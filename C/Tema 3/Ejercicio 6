@@ -1,0 +1,25 @@
+//Calcular la media geométrica de una serie de números reales leídos por teclado. Para ello, previamente se preguntará al usuario cuantos números desea introducir.
+
+#include <stdio.h>
+#include <math.h>
+
+int main(){
+
+int i;
+float n, a, multiplicador=1, resultado;
+
+  printf("¿Cuantos números desea introducir? ");
+  scanf("%f", &n);
+
+  for(i=1;i<=n;i++){
+    printf("Número %d: ",i);
+    scanf("%f", &a);
+    multiplicador=multiplicador*a;
+  }
+
+  resultado=sqrt(multiplicador);
+
+  printf("Resultado: %f", resultado);
+
+  return 0;
+}

@@ -1,0 +1,26 @@
+// Calcular el factorial de una serie de números leídos por teclado hasta que el usuario introduzca un cero.
+
+#include <stdio.h>
+
+int main(){
+
+  int i, n, mult, exito = 0;
+
+  while(!exito){
+
+    printf("Número del que quieres obtener el factorial: ");
+    scanf("%d", &n);
+
+    if(n==0){
+      exito=1;
+    }else{    
+        mult =1;
+        
+        for(i=1; i<=n; i++){
+        mult = mult *i;
+      }
+      printf("Resultado: %d\n", mult);
+    }
+  }
+  return 0;
+}

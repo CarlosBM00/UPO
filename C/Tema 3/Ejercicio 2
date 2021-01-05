@@ -1,0 +1,19 @@
+// Obtener la suma de los cuadrados de los números entre a y b (leídos por teclado).
+
+#include <stdio.h>
+
+int main (){
+
+  int a, b, suma = 0;
+  printf("Número 1: ");
+  scanf("%d", &a);
+  printf("Número 2: ");
+  scanf("%d", &b);
+
+
+  for(a=a+1; a<b; a++){
+    suma = suma + a*a;
+  }
+  printf("Suma: %d", suma);
+  return 0;
+}

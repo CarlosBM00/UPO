@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+void tiempo(int segdados, int * horas, int * minutos, int * segundos);
+
+int main(){
+
+int segsdados, segundos, minutos, horas;
+
+printf("Segundos: ");
+scanf("%d", &segsdados );
+
+tiempo(segsdados, &horas, &minutos, &segundos);
+
+printf("\nSon %d horas, %d minutos y %d segundos", horas, minutos, segundos);
+
+return 0;
+}
+
+void tiempo(int segdados, int * horas, int * minutos, int * segundos){
+int aux;
+
+aux = segdados;
+*segundos = aux%60;
+aux = aux/60;
+*minutos=aux%60;
+*horas = aux/60;
+
+}

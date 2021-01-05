@@ -1,0 +1,34 @@
+/*  Función que reciba una cadena de caracteres y un carácter y devuelva cuántas veces aparece dicho carácter en la cadena */
+
+#include <stdio.h>
+
+#define TAM 50
+
+int contchar(char a[], char b[1]);
+int main(){
+char b[1];
+char a[TAM];
+
+printf("Letra a buscar: ");
+scanf("%s", b);
+fflush(stdin);
+printf("Texto: ");
+scanf("%s", a);
+
+printf("La letra '%s' se repite %d veces", b, contchar(a, b) );
+
+}
+int contchar(char a[], char b[1]){
+int contador, i=0;
+
+while(a[i] != '\0'){
+    if(a[i]==b[0]){
+        contador++;
+    }
+    i++;
+}
+
+
+return contador;
+}
+

@@ -1,0 +1,62 @@
+/* Escribir una función que permita localizar un número dentro de una matriz de números reales, devuelva si se
+encuentra o no y la posición en la que se encuentra. Este ejercicio es similar al ejercicio 4.6, pero usando una función.
+Implementar un programa completo con una función main de prueba leyendo los datos desde teclado. */
+
+#include <stdio.h>
+#define NFIL 100
+#define NCOL 100
+
+int encontrar(float m[NFIL][NCOL], int nfil, int ncol, float nbuscar, int * fila, int * columna);
+
+
+int main(){
+int nfil, ncol, i, j, res, fila, columna;
+float m[NFIL][NCOL], nbuscar;
+
+printf("Número de filas: ");
+scanf("%d", &nfil);
+
+printf("Número de columnas: ");
+scanf("%d", &ncol);
+
+for (i=0; i<nfil; i++){
+    for(j=0; j<ncol; j++){
+        printf("Posición (%d,%d): ", i, j);
+        scanf("%f", &m[i][j]);
+    }
+}
+
+printf("\nNúmero a buscar: ");
+scanf("%f", &nbuscar);
+
+
+res = encontrar(m, nfil, ncol, nbuscar, &fila, &columna);
+
+if (res == 1)
+    printf("\nNúmero encontrado en la posición (%d,%d)", fila, columna);
+else
+    printf("\nNúmero no encontrado");
+
+return 0;
+}
+
+int encontrar(float m[NFIL][NCOL], int nfil, int ncol, float nbuscar, int * fila, int * columna){
+int i, j, exito;
+
+i=0;
+while(i<nfil && !exito){
+    j=0;
+    while (j<ncol && !exito){
+        if(m[i][j] == nbuscar){
+            exito = 1;
+            *fila = i;
+            *columna = j;
+        }
+        else
+            j++;
+    }
+    i++;
+}
+
+return exito;
+}

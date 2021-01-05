@@ -1,0 +1,34 @@
+/* Algoritmo que indique si existe una posición en el vector t tal que la suma de todos los elementos
+precedentes es igual a un número dado n leído por teclado. */
+
+#include<stdio.h>
+
+#define N 10
+
+int main(){
+
+int a, i, sum, exito;
+
+int v[N]={1,2,3,5,11,6,7,8,9,10};
+
+printf("Número: ");
+scanf("%d", &a);
+
+
+i=0;
+exito = 0;
+sum = 0;
+while(i<a && !exito ){
+
+    if(sum == a){
+        printf("%d, en la posición %d es la suma de sus anteriores", v[i], i);
+        exito = 1;
+    }
+    else{
+        sum = sum + v[i];
+        i++;
+    }
+}
+
+return 0;
+}

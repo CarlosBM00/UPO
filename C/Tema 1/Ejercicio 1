@@ -1,0 +1,21 @@
+Obtener las horas, minutos y segundos de una hora expresada en segundos leída por teclado.
+
+#include <stdio.h>
+
+int main() {
+  
+int secs, h, m, s, aux;
+
+printf("Segundos:");
+scanf ("%d", &secs);
+
+aux = secs;
+s=aux%60;
+aux=aux/60;
+m=aux%60;
+h=aux/60;
+
+printf("%d segundos son %d horas, %d minutos y %d segundos", secs, h, m, s);
+
+return 0;
+}

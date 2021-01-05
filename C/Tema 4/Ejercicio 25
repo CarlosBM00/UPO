@@ -1,0 +1,31 @@
+/* Algoritmo que ordene un vector t de N reales (leído por teclado) por el método de inserción */
+
+#include<stdio.h>
+
+int main(){
+int n, i, j, aux;
+
+printf("Número de elementos: ");
+scanf("%d", &n);
+
+int
+t[n];
+
+for(i=0;i<n;i++){
+    printf("Número %d: ", i+1);
+    scanf("%d", &t[i]);
+}
+
+aux = 0;
+for(i=0;i<n;i++){
+    for(j=i+1;j<=n;j++){
+        if(t[j]<t[i]){
+            aux = t[j];
+            t[j] = t[i];
+            t[i] = aux;
+        }
+    }
+}
+
+return 0;
+}

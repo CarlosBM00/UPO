@@ -1,0 +1,52 @@
+/* Algoritmo que indique si un número n es primo. */
+
+/* Forma 1 */
+#include <stdio.h>
+
+int n, i=2, exito=0;
+
+int main(){
+
+printf("Número: ");
+scanf("%d",&n);
+
+  while(!exito&&i<n){
+    if(n%i==0)
+      exito=1;
+    else
+      i++;
+      }
+    if(exito==0)  
+    printf("Es primo");
+    else
+    printf("No es primo");
+  return 0;
+}
+
+
+
+
+/* Forma 2
+#include <stdio.h>
+
+int n, i, contador;
+
+int main(){
+
+  printf("Número: ");
+  scanf("%d", &n);
+
+  for(i=1;i<=n;i++){
+    if(n%i==0) /* si n módulo de i es 0, incrementamos a en 1. */
+    contador++;
+  }
+
+  if(contador==2)
+      printf("El número es primo");
+  else
+    printf("El número no es primo");
+
+  return 0;
+} */
+
+

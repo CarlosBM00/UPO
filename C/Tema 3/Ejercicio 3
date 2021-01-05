@@ -1,0 +1,27 @@
+//Solicitar una serie de gastos (en euros) al usuario hasta que la suma supere un total de presupuesto leído previamente por teclado.
+
+#include <stdio.h>
+
+
+int main (){
+
+int gasto, gastototal = 0, presupuesto, exito = 0;
+
+printf("Presupuesto: ");
+scanf("%d", &presupuesto);
+
+  while(presupuesto > gastototal && !exito){
+    
+    printf("Gastos: ");
+    scanf("%d", &gasto);
+
+    if(presupuesto > gastototal)
+      gastototal = gastototal + gasto;
+    else 
+      exito = 1;
+  }
+ printf("El gasto total es de %d, con un presupuesto de %d", gastototal, presupuesto);
+
+
+  return 0;
+}

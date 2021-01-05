@@ -1,0 +1,24 @@
+/* Algoritmo que sume los elementos de la columna k de una matriz m de NxN reales*/
+#include <stdio.h>
+#define k 2
+
+int main() {
+
+int i, n;
+float sum;
+
+
+printf("Sumar la columna: ");
+scanf("%d", &n);
+
+float m[2][2]={{1.2,3.4},
+             {3,4}};
+sum=0;
+for(i=0;i<k;i++){
+    sum = sum + m[i][n-1];
+}
+
+printf("La suma de la columna %d es: %.2f", n, sum);
+
+return 0;
+}

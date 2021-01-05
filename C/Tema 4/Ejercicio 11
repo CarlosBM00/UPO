@@ -1,0 +1,15 @@
+/* Algoritmo que invierta el orden de los elementos de un vector de números reales. */
+#include <stdio.h>
+#define k 5
+int main() {
+
+int i;
+
+int v[k]={1,2,3,4,5};
+
+for(i=1;i<=k;i++){
+    printf("%d",v[k-i]);
+}
+
+return 0;
+}

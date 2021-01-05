@@ -1,0 +1,41 @@
+// Dados tres números d, m y a, representando el día, mes y año de una fecha, indicar si la fecha es válida, considerando los años bisiestos.
+
+#include <stdio.h>
+
+int main(){
+
+int d, m , a;
+
+printf("Día: ");
+scanf("%d", &d);
+printf("Mes: ");
+scanf("%d", &m);
+printf("Año: ");
+scanf("%d", &a);
+
+printf ("La fecha introducida es %d/%d/%d\n", d, m, a);
+
+
+if(a%4==0){       /*bisiesto */
+  if (m>12)
+    printf("Fecha incorrecta: El mes no puede ser mayor que 12\n");
+  if (m == 2 && d > 29)
+    printf("Fecha incorrecta: No hay más de 29 días en Febrero\n");
+  if ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30)
+    printf("Fecha incorrecta: No hay más de 30 días en el mes seleccionado\n");
+  if ((m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) && d > 31)
+    printf("Fecha incorrecta: No hay más de 31 días en el mes seleccionado\n");
+}
+else           /*NO bisiesto */
+  if (m>12)
+    printf("Fecha incorrecta: El mes no puede ser mayor que 12\n");
+  if (m == 2 && d > 28)
+    printf("Fecha incorrecta: No hay más de 28 días en Febrero\n");
+  if ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30)
+    printf("Fecha incorrecta: No hay más de 30 días en el mes seleccionado\n");
+  if ((m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10 || m == 12) && d > 31)
+    printf("Fecha incorrecta: No hay más de 31 días en el mes seleccionado\n");
+
+
+return 0;
+}

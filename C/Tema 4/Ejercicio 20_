@@ -1,0 +1,16 @@
+/* Algoritmo que realice una rotación a la derecha en un vector t de N reales  */
+#include <stdio.h>
+#define K 4
+
+
+int main() {
+
+int i;
+int v[K]={1,2,3,4};
+
+for(i=0;i<K;i++){
+    printf("%d", v[(K+i-1)%K]);
+}
+
+return 0;
+}

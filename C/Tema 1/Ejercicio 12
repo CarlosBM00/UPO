@@ -1,0 +1,29 @@
+// Mostrar por pantalla un número real aleatorio comprendido entre a y b (leídos por teclado).
+
+
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main(){
+
+float a, b, num, resto, cociente,random, result;
+
+srand (time(NULL));
+
+printf("Primer número: ");
+scanf("%f", &a);
+printf("Segundo número: ");
+scanf("%f", &b);
+
+random= a + rand();
+cociente=random/(b-a+1);
+resto=random-(cociente*(b-a+1));
+result=random/cociente;
+
+
+
+printf("Número aleatorio: %f", result);
+
+  return 0;
+}

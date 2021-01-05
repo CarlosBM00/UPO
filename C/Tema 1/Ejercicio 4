@@ -1,0 +1,15 @@
+//Convertir a grados Fahrenheit una temperatura en Celsius leída por teclado.
+#include <stdio.h>
+
+int main(){
+
+float celsius, fahr;
+
+printf("Temperatura en grados celsius: ");
+scanf("%f", &celsius);
+
+fahr = ((celsius - 32)/9)*5;
+
+printf("%.2f grados en Celsius son %.2f grados en Fahrenheit",celsius, fahr);
+  return 0;
+}

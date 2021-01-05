@@ -1,0 +1,30 @@
+/* Algoritmo que ordene un vector t de N reales (leído por teclado) por el método de la burbuja */
+
+#include<stdio.h>
+
+int main(){
+int n, i, j, aux;
+
+printf("Número de elementos: ");
+scanf("%d", &n);
+
+int
+t[n];
+
+for(i=0;i<n;i++){
+    printf("Número %d: ", i+1);
+    scanf("%d", &t[i]);
+}
+
+for(i=0;i<n;i++){
+    for(j=0;j<n;j++){
+        if(t[j]>t[j+1]){
+         aux = t[j];
+         t[j] = t[j+1];
+         t[j+1] = aux;
+        }
+    }
+}
+
+return 0;
+}

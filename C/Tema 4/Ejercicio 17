@@ -1,0 +1,35 @@
+/* Algoritmo que sume dos matrices de números reales m1 y m2 leídas por teclado, almacenando el
+resultado en otra matriz m3 y mostrándola por pantalla */
+#include <stdio.h>
+#define NFIL 2
+#define NCOL 2
+
+int main() {
+
+int i, j;
+int m1[NFIL][NCOL], m2[NFIL][NCOL], s[NFIL][NCOL];
+printf("\nPrimera matriz: \n");
+for(i=0;i<NFIL;i++){
+    for(j=0;j<NCOL;j++){
+        printf("Posición (%d,%d): ", i, j);
+        scanf("%d", &m1[i][j]);
+    }
+}
+printf("\nSegunda matriz: \n");
+for(i=0;i<NFIL;i++){
+     for(j=0;j<NCOL;j++){
+        printf("Posición (%d,%d): ", i, j);
+        scanf("%d", &m2[i][j]);
+    }
+}
+printf("\nResultado: \n");
+for(i=0;i<NFIL;i++){
+     for(j=0;j<NCOL;j++){
+        s[i][j]=m1[i][j]+m2[i][j];
+        printf("%2.d",s[i][j]);
+    }
+    printf("\n");
+}
+
+return 0;
+}

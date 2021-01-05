@@ -1,0 +1,28 @@
+// Encontrar cual es el número entero más bajo cuyo factorial supera un determinado umbral leído por teclado.
+
+#include <stdio.h>
+#include <math.h>
+
+int n, i, j, mult, exito = 0;
+
+int main(){
+
+  printf("Número: ");
+  scanf("%d", &n);
+
+  while(!exito){
+
+    j++;
+    mult = 1;
+
+      for(i=1; i<=j; i++){ // obtener el factorial de j
+        mult = mult *i;
+      }
+      if(mult>n){
+        exito = 1;
+        printf("El número entero más bajo cuyo factorial supera a %d, es %d", n, i-1);
+      }
+
+  }
+    return 0;
+}

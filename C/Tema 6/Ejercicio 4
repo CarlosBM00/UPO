@@ -1,0 +1,60 @@
+/* Escribir una función que, dadas una matriz de enteros (m) y un valor entero (x), devuelva dos vectores de
+enteros (llamados menores y mayores) y tres números enteros (nmenores, nmayores y niguales). Dicha función debe
+obtener los números que sean menores, mayores y cuantos números iguales al entero x hay en la matriz m */
+
+#include <stdio.h>
+
+#define NFIL 100
+#define NCOL 100
+#define TAM 100
+
+int menoresMayores(int m[NFIL][NCOL], int nfil, int ncol, int x, int menores[TAM], int mayores[TAM], int * nmenores, int * nmayores );
+
+int main(){
+    int menores[TAM], mayores[TAM], nmenores, nmayores, niguales, i;
+    int m[NFIL][NCOL] = {{4,3,5,9},
+                         {5,8,7,2},
+                         {1,6,0,5}};
+
+    niguales = menoresMayores(m, 3 , 4, 5, menores, mayores, &nmenores, &nmayores);
+
+    printf("\nMenores: ");
+    for (i=0; i<nmenores; i++){
+        printf("%d ", menores[i]);
+    }
+
+    printf("\nMayores: ");
+    for (i=0; i<nmayores; i++){
+        printf("%d ", mayores[i]);
+    }
+    printf("\nIguales: %d\n", niguales);
+
+return 0;
+}
+
+int menoresMayores(int m[NFIL][NCOL], int nfil, int ncol, int x, int menores[TAM], int mayores[TAM], int * nmenores, int * nmayores ){
+
+    int i, j, niguales;
+
+    *nmayores = 0;
+    *nmenores = 0;
+    niguales = 0;
+
+    for(i=0 ; i<nfil ; i++){
+        for(j=0 ; j<ncol ; j++){
+            if (m[i][j] < x){
+                menores[*nmenores] = m[i][j];
+                (*nmenores)++;
+            }
+            else if (m[i][j] > x){
+                mayores[*nmayores] = m[i][j];
+                (*nmayores)++;
+            }else{
+                niguales++;
+            }
+
+        }
+    }
+    return niguales;
+}
+

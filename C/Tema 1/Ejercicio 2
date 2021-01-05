@@ -1,0 +1,23 @@
+//  Obtener el número total de segundos de una hora expresada con horas, minutos y segundos leída por teclado.
+
+#include <stdio.h>
+
+int main() {
+
+int horas, minutos, segundos, totalsec;
+
+printf("Hora:");
+scanf ("%d", &horas);
+
+printf("Minuto:");
+scanf ("%d", &minutos);
+
+printf("Segundos:");
+scanf ("%d", &segundos);
+
+totalsec = ((horas*60)*60) + (minutos*60) + segundos;
+
+printf("El total de segundos es %d", totalsec);
+
+return 0;
+}

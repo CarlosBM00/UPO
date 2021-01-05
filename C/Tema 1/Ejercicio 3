@@ -1,0 +1,18 @@
+ Convertir a radianes un ángulo leído por teclado.
+ 
+#include <stdio.h>
+
+#define PI 3.14159265358979323846
+
+int main(){
+  int angle;
+  float radianes;
+
+  printf("Ángulo:");
+  scanf("%d", &angle);
+
+radianes= (angle*PI)/180;
+
+printf("%f", radianes);
+return 0;
+}

@@ -1,0 +1,68 @@
+/* Escribir un programa completo (con main) que calcule la hora/min/seg del instante de tiempo que equidista
+de dos instantes h1/m1/s1 y h2/m2/s2. */
+
+#include<stdio.h>
+
+int totalsegundos (int h, int m, int s);
+float media (int a, int b);
+int instanteIntermedio (int h1, int m1, int s1, int h2, int m2, int s2);
+
+int main(){
+int h1, m1, s1, h2, m2, s2, aux, segtotal, s, m, h;
+
+printf("Primera hora\n");
+printf("Horas: ");
+scanf("%d", &h1);
+printf("Minutos: ");
+scanf("%d", &m1);
+printf("Segundos: ");
+scanf("%d", &s1);
+
+printf("Segunda hora\n");
+printf("Horas: ");
+scanf("%d", &h2);
+printf("Minutos: ");
+scanf("%d", &m2);
+printf("Segundos: ");
+scanf("%d", &s2);
+
+
+segtotal=instanteIntermedio (h1, m1, s1, h2, m2, s2);
+
+aux = segtotal;
+s = aux % 60;
+aux = aux / 60;
+m = aux % 60;
+h = aux/60;
+
+printf("El instante intermedio es: %d:%d:%d", h,m,s);
+
+return 0;
+}
+
+int totalsegundos (int h, int m, int s){
+int aux;
+
+aux = h * 60;
+s = (aux*60) + (m*60) + s;
+
+return s;
+}
+
+float media (int a, int b){
+
+return (a+b)/2;
+}
+
+int instanteIntermedio (int h1, int m1, int s1, int h2, int m2, int s2){
+int segundos1, segundos2;
+float mediasegs;
+
+segundos1=totalsegundos(h1,m1,s1);
+segundos2=totalsegundos(h2,m2,s2);
+mediasegs=media(segundos1, segundos2);
+
+return mediasegs;
+}
+
+

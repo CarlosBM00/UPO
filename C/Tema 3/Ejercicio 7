@@ -1,0 +1,19 @@
+//Algoritmo que calcule el factorial de un número n
+
+#include <stdio.h>
+
+int main(){
+
+  int i, n, mult = 1;
+
+  printf("Número del que quieres obtener el factorial: ");
+  scanf("%d", &n);
+
+  for(i=1; i<=n; i++){
+    mult = mult *i;
+  }
+
+  printf("Resultado: %d", mult);
+
+  return 0;
+}

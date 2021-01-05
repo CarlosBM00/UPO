@@ -1,0 +1,19 @@
+/* Algoritmo que calcula la traspuesta de una matriz m de NxN reales respecto de la diagonal principal */
+#include <stdio.h>
+#define NFIL 2
+#define NCOL 2
+
+int main() {
+
+int i, j;
+int v[NFIL][NCOL]={{2,3},{4,5}};
+for(i=0; i<NCOL; i++){
+    for(j=0; j<NFIL; j++){
+        printf("%d", v[j][i]);
+    }
+    printf("\n");
+}
+
+
+return 0;
+}

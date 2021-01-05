@@ -1,0 +1,40 @@
+/* Algoritmo que indique si en una matriz existe alguna fila cuya suma coincide con un número s leído
+por teclado */
+
+#include<stdio.h>
+
+#define NFIL 2
+#define NCOL 3
+
+int main(){
+
+int s, i, j, sum, sumtotal, fila, exito;
+
+int m[NFIL][NCOL]={{1,2,3},
+                   {5,14,6}};
+
+printf("Suma total: ");
+scanf("%d", &s);
+
+exito = 0;
+while(!exito){
+    for (i=0;i<=NFIL;i++){
+            sum = 0;
+        for (j=0;j<=NCOL;j++){
+            sum = sum + m[i][j];
+            if(sum == s){
+            exito = 1;
+            fila = i;
+            sumtotal = sum;
+            }
+        }
+    }
+}
+
+if (exito == 1)
+    printf("En la fila %d la suma total vale %d", fila, sumtotal);
+else
+    printf("No existe ninguna fila donde el total sume %d", s);
+
+return 0;
+}

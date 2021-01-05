@@ -1,0 +1,23 @@
+// . Calcular la cifra i-ésima de un número natural n (i y n leídos por teclado).
+
+#include <stdio.h>
+#include <math.h>
+
+int main (){
+  
+  int a, n, i, elevado, resultado;
+
+  printf("Número: ");
+  scanf("%d", &n);
+  printf("Posición: ");
+  scanf("%d", &i);  
+
+
+  elevado=pow(10,i);
+  n = n%elevado; 
+  resultado=n/(pow(10,(i-1)));
+
+  printf("El resultado de la potencia de estos números es: %d\n", resultado);
+
+  return 0; 
+}  

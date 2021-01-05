@@ -1,0 +1,24 @@
+// Algoritmo que indique si un número n es cuadrado perfecto (sin utilizar la operación raíz). Un número es cuadrado perfecto si existe un número natural cuyo cuadrado es igual a n
+
+#include <stdio.h>
+#include <math.h>
+
+int n, exito=0, contador;
+
+int main(){
+
+  printf("Número: ");
+  scanf("%d", &n);
+
+  while(!exito){
+
+    if(pow(contador,2) == n)
+    exito = 1;
+
+    contador++;
+  }
+
+printf("El número introducido es un cuadrado perfecto");
+
+  return 0;
+}

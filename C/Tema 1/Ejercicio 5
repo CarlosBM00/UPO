@@ -1,0 +1,19 @@
+// Calcular el índice de masa corporal del usuario dado su peso en Kg y su altura en metros leídos por teclado.
+
+#include <stdio.h>
+
+int main(){
+
+  float altura, peso, resultado;
+
+  printf("Altura (m): ");
+  scanf("%f", &altura);
+  printf("Peso (kg):");
+  scanf("%f", &peso);
+
+  resultado = peso/(altura*altura);
+
+  printf("El índice de masa corporal es %.2f", resultado);
+
+  return 0;
+}

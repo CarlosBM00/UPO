@@ -1,0 +1,24 @@
+// Averiguar el cuadrante en el que se encuentra un punto en el plano solicitado por teclado.
+
+#include <stdio.h>
+
+int main(){
+
+int x, y;
+
+printf("Elige un punto x: ");
+scanf("%d",&x);
+printf("Elige un punto y: ");
+scanf("%d",&y);
+
+if (x>0 && y>0)
+  printf("Arriba a la derecha");
+  else if (x>0 && y<0)
+    printf("Abajo a la izquierda");
+      else if (x<0&&y>0)
+        printf("Arriba a la izquierda");
+        else printf ("Abajo a la izquierda");
+
+
+return 0;
+}

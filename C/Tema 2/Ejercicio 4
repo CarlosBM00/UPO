@@ -1,0 +1,40 @@
+// Dada una fecha con su día, mes y año, leída por teclado, mostrar cual es la fecha del día siguiente.
+#include <stdio.h>
+
+int main(){
+
+int d, m , a;
+
+  printf("Día: ");
+  scanf("%d", &d);
+  printf("Mes: ");
+  scanf("%d", &m);
+  printf("Año: ");
+  scanf("%d", &a);
+  printf ("La fecha introducida es %d/%d/%d\n", d, m, a);
+
+  d=d+1;
+
+  if(d != 30 || d !=31 || (d!=28 && a % 4 != 0)) //días normales
+    printf("El día siguiente es %d/%d/%d\n", d, m, a);
+
+  if (d > 28 && m == 2){ 
+  if (a % 4 == 0) //bisiestos
+  printf ("El día siguiente es 29/2/%d\n", a);
+  else if(a % 4 != 0)  //no bisisestos
+  printf ("El día siguiente es 1/3/%d\n", a);
+  }
+  if ((m == 4 || m == 6 || m == 9 || m == 11) && d > 30){ //meses con 30 días
+    m=m+1;
+    printf ("El día siguiente es 1/%d/%d\n", m, a);
+  } else if ((m == 1 || m == 3 || m == 5 || m == 7 || m == 8 || m == 10) && d > 31){ //meses con 31   días
+    m=m+1;
+    printf("El día siguiente es 1/%d/%d\n", m, a);
+    }
+
+  if ( m == 12 && d > 31) { //cambio de año
+  a=a+1;
+  printf ("El día siguiente es 1/1/%d\n", a);
+  }
+return 0;
+}

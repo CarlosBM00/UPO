@@ -1,0 +1,29 @@
+/* Escribir una función que calcule la suma de los elementos de una determinada fila de una matriz. Implementar
+una función main para probar el funcionamiento con datos leídos desde teclado. */
+
+#include <stdio.h>
+#define N 2
+#define M 3
+
+int sumfil( int a, int m[][M]);
+
+int main(){
+int a;
+int m[N][M] ={{2,4,3},{1,5,7}};
+
+printf("Fila: ");
+scanf("%d",&a);
+
+
+printf("Suma total: %d ", sumfil(a, m));
+return 0;
+}
+
+int sumfil( int a, int m[][M]){
+int j, sum;
+sum = 0;
+    for(j=0;j<M;j++){
+        sum = sum + m[a][j];
+    }
+    return sum;
+}

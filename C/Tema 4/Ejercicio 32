@@ -1,0 +1,45 @@
+/* Algoritmo que indique si existe en una matriz m de NxM enteros una fila que sume igual que una
+columna */
+
+#include<stdio.h>
+
+#define N 2
+#define M 3
+
+int main(){
+
+int i, j, fila, columna, sumFIL, sumCOL, exito;
+
+int m[N][M]={{11,2,3},{3,14,6}};
+
+
+j=0;
+while(!exito && i<M){
+
+    sumFIL = 0;
+    for(j=0; i<M ; i++){
+        sumFIL = sumFIL + m[j][i];
+    }
+
+    for(i=0; i<N ; i++){
+        sumCOL = 0;
+        for(j=0; j<M ; j++){
+            if(j==M-1){
+            m[j][i]=0;
+            }
+            sumCOL = sumCOL + m[j][i];
+            if(sumCOL == sumFIL)
+            exito = 1;
+            fila = i;
+            columna = j;
+        }
+    }
+}
+
+
+if(exito == 1)
+    printf("La fila %d y la columna %d tienen la misma suma total", fila, columna);
+else
+    printf("No se ha encontrado ninguna suma total que coincida");
+return 0;
+}

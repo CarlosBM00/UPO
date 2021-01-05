@@ -1,0 +1,31 @@
+//Leer una serie de números reales introducidos por teclado hasta que el usuario introduzca un cero, almacenarlos en un vector e imprimir finalmente la media aritmética calculada a partir del vector
+
+#include <stdio.h>
+
+#define TAM 100
+
+int main(){
+
+int v[100], i, exito, cont, sumtotal;
+  i = 0;
+  exito = 0;
+  sumtotal=0;
+  while(!exito){
+    if (i<TAM){
+
+      printf("Número que quieres introducir: ");
+      scanf("%d", &v[i]);
+
+    if(v[i] != 0){
+      cont++;
+      sumtotal=sumtotal+v[i];
+    }else{
+      exito = 1;
+    }
+      i++;
+    }
+  }
+printf("La media es %d", sumtotal/cont);
+
+  return 0;
+}

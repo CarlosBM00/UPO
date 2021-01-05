@@ -1,0 +1,24 @@
+// Algoritmo que indique si un número es perfecto. Un número es perfecto si es suma de sus divisores, comenzando por 1 y excluyendo el propio número.
+
+#include <stdio.h>
+#include <math.h>
+
+int n, i, suma=0;
+
+int main(){
+
+  printf("Número: ");
+  scanf("%d", &n);
+
+  for(i=1; i<n ; i++){  
+    if(n%i==0)
+      suma = suma+i;
+  }
+
+  if(n==suma)
+    printf("Es un número perfecto");
+  else 
+    printf("No es un número perfecto");
+
+    return 0;
+}

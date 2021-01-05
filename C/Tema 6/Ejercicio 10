@@ -1,0 +1,92 @@
+/* Escribir una función que reciba una matriz de números reales, su número de filas y columnas, así como un
+vector y su número de elementos. La función debe devolver dos vectores (para cada uno se devuelve también su número
+de elementos). El primero de ellos contendrá todos los números de la matriz que sean mayores que todos los elementos
+del vector de entrada. El segundo de ellos contendrá todos los números que sean menores */
+
+#include <stdio.h>
+#define NFIL 100
+#define NCOL 100
+#define TAM 100
+
+void mayoresMenores(float m[NFIL][NCOL], int nfil, int ncol, float v[TAM], int tam, float mayores[TAM], int * nmayores, float menores[TAM], int * nmenores);
+
+int mayorQueTodo (float n, float v[TAM], int tam );
+
+int menorQueTodo (float n, float v[TAM], int tam );
+
+
+int main(){
+int nmayores, nmenores, i;
+float mayores[TAM], menores[TAM];
+
+float m[NFIL][NCOL] = {{1.1,2.0},
+                       {8.3,9.2}};
+
+float v[TAM] = {4.2,5.1,6.3,7.4};
+
+
+mayoresMenores(m, 2 , 2, v , 5, mayores, &nmayores, menores, &nmenores );
+
+printf("\nNúmero de elementos del vector mayores: %d\n", nmayores);
+for(i=0;i<nmayores;i++){
+    printf("%.2f ", mayores[i]);
+}
+
+
+printf("\nNúmero de elementos del vector menores: %d\n", nmenores);
+for(i=0;i<nmenores;i++){
+    printf("%.2f ", menores[i]);
+}
+
+return 0;
+}
+
+void mayoresMenores(float m[NFIL][NCOL], int nfil, int ncol, float v[TAM], int tam, float mayores[TAM], int * nmayores, float menores[TAM], int * nmenores){
+int i, j;
+
+*nmayores = 0;
+*nmenores = 0;
+
+for(i=0; i<nfil; i++){
+ for(j=0; j<ncol; j++){
+    if( mayorQueTodo(m[i][j], v, tam) == 1){
+
+        mayores[*nmayores]= m[i][j];
+        (*nmayores)++;
+
+    }else if(menorQueTodo(m[i][j], v, tam) == 1){
+
+        menores[*nmenores]= m[i][j];
+        (*nmenores)++;
+    }
+ }
+}
+
+}
+
+int mayorQueTodo (float n, float v[TAM], int tam ){
+int i=0, exito = 1;
+
+while(exito && i<tam-1){
+    if(v[i]>n){
+        exito = 0;
+    }else{
+    i++;
+    }
+}
+
+return exito;
+}
+
+int menorQueTodo (float n, float v[TAM], int tam ){
+int i=0, exito = 1;
+
+while(exito && i<tam-1){
+    if(v[i]<n){
+        exito = 0;
+    }else
+    i++;
+}
+
+return exito;
+}

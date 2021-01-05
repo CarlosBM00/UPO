@@ -1,0 +1,35 @@
+/*  Función que reciba dos cadenas de caracteres y devuelva el número de caracteres comunes en las mismas
+posiciones */
+
+#include <stdio.h>
+
+#define TAM 50
+
+int comunes(char a[], char b[]);
+int main(){
+
+char a[TAM];
+char b[TAM];
+
+
+
+printf("Texto A: ");
+scanf("%s", a);
+fflush(stdin);
+printf("Texto B: ");
+scanf("%s", b);
+
+printf("Número de caracteres comunes: %d",comunes(a, b) );
+
+}
+int comunes(char a[], char b[1]){
+int contador, i=0;
+
+while(a[i] != '\0'){
+    if(a[i]==b[i]){
+        contador++;
+    }
+    i++;
+}
+return contador;
+}

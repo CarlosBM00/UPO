@@ -1,0 +1,30 @@
+/*Crear una matriz con números reales inicializada en el propio programa y determinar si existe al menos un
+número superior a un determinado valor umbral leído por teclado.*/
+
+#include <stdio.h>
+#define nfil 2
+#define ncol 4
+
+int main(){
+
+int i, j, n, superado;
+
+int m[nfil][ncol] = {{1,2,3,4},{5,6,7,8}};
+
+printf("Umbral: ");
+scanf("%d", &n);
+
+for(i=0;i<nfil;i++){
+    for(j=0;j<ncol;j++){
+        printf("%d", m[i][j]);
+        if(m[i][j]>n)
+            superado = 1;
+    }
+    printf("\n");
+}
+if(superado == 1)
+printf("Existe un valor superior al umbral");
+else
+printf("No existe un valor superior al umbral");
+  return 0;
+}

@@ -1,0 +1,58 @@
+/* Usando la estructura Asignatura definida en el Ejercicio 7.1, definir una función que reciba dos asignaturas y
+una cadena de caracteres que contenga el nombre de un campo de la estructura Asignatura. La función debe devolver un
+número entero que permita comparar las dos asignaturas. En concreto, si la primera asignatura es mayor que la segunda,
+según el campo indicado, entonces el entero devuelto será mayor que cero. Si la primera asignatura fuese menor, la función
+deberá devolver un entero menor que cero. Finalmente, si ambas asignaturas son iguales, la función devolverá cero. Por
+ejemplo, si las asignaturas fuesen {“FP”, 1, 1, 10, 1} y {“ES”, 1, 1, 9.5, 1} y el campo fuese “calificacion”, la función deberá
+devolver un número mayor que cero (porque 10 es mayor que 9.5).*/
+
+#include <stdio.h>
+#include <string.h>
+#define TAM 100
+
+
+typedef struct{
+
+char nombre[TAM];
+int curso, semestre, nmatriculaciones;
+float calificacion;
+
+} Asignatura;
+
+int comparar(Asignatura p, Asignatura q, char campo[]);
+
+int main(){
+
+char campo[] = "semestre";
+
+Asignatura p,q;
+
+strcpy(p.nombre, "EST");
+p.curso = 1;
+p.semestre = 3;
+p.nmatriculaciones = 4;
+p.calificacion= 6;
+
+strcpy(p.nombre, "CAL");
+q.curso = 1;
+q.semestre = 2;
+q.nmatriculaciones = 5;
+q.calificacion= 6;
+
+printf("Resultado: %d", comparar(p, q, campo));
+
+return 0;
+}
+
+int comparar(Asignatura p, Asignatura q, char campo[]){
+int res;
+
+if (strcmp(p.campo, q.campo) > 0)
+  res = 1;
+  else if (strcmp(p.campo, q.campo) < 0)
+  res = -1;
+  else
+  res = 0;
+
+return res;
+}

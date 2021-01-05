@@ -1,0 +1,34 @@
+/* Algoritmo que calcule el producto escalar de dos vectores t1 y t2 de N reales leídos por teclado */
+#include <stdio.h>
+
+int main() {
+
+int n,i, pesc, acum;
+
+printf("Número de numeros a introducir: ");
+scanf("%d", &n);
+
+int t1[n];
+int t2[n];
+
+printf("Primer vector\n");
+for(i=0;i<n;i++){ /* Primer vector */
+
+    printf("Número %d: ",i+1);
+    scanf("%d", &t1[i]);
+}
+printf("Segundo vector\n");
+for(i=0;i<n;i++){ /* Segundo vector */
+
+    printf("Número %d: ",i+1);
+    scanf("%d", &t2[i]);
+}
+for(i=0;i<n;i++){ /* Producto escalar */
+    pesc=t1[i]*t2[i];
+    acum=acum+pesc;
+}
+
+printf("Producto escalar:%d", acum );
+
+return 0;
+}

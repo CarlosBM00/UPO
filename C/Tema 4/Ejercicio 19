@@ -1,0 +1,24 @@
+/* Algoritmo que cuente el número de apariciones de un número n en una matriz m de NxN reales.  */
+#include <stdio.h>
+#define NFIL 2
+#define NCOL 2
+
+int main() {
+
+int n, i, j, cont;
+int v[NFIL][NCOL]={{2,3},{4,2}};
+
+printf("¿Qué número buscas?: ");
+scanf("%d", &n);
+
+for(i=0; i<NCOL; i++){
+    for(j=0; j<NFIL; j++){
+        if(n==v[i][j])
+            cont++;
+    }
+}
+
+printf("Número de veces que aparece %d: %d", n, cont );
+
+return 0;
+}
