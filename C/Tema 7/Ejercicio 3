@@ -1,0 +1,83 @@
+/* Usando la estructura Asignatura definida en el Ejercicio 7.1, definir una función que reciba una matriz de
+asignaturas, junto con sus dimensiones útiles y devuelva la calificación media de las asignaturas de la matriz, la calificación
+mínima, máxima y el promedio del número de matriculaciones*/
+
+#include <stdio.h>
+#include <string.h>
+#define TAM 100
+#define NFIL 100
+#define NCOL 100
+
+
+typedef struct{
+
+char nombre[TAM];
+int curso, semestre, nmatriculaciones;
+float calificacion;
+
+} Asignatura;
+
+void estadisticas(Asignatura m[NFIL][NCOL], int nfil, int ncol, float * media, float * minima, float * maxima, float * promedioMatriculaciones);
+
+int main(){
+
+float media, minima, maxima, promedioMatriculaciones;
+
+Asignatura m[NFIL][NCOL];
+
+strcpy(m[0][0].nombre, "EST");
+m[0][0].curso = 1;
+m[0][0].semestre = 3;
+m[0][0].nmatriculaciones = 15;
+m[0][0].calificacion= 6.0;
+
+strcpy(m[0][1].nombre, "CAL");
+m[0][1].curso = 1;
+m[0][1].semestre = 2;
+m[0][1].nmatriculaciones = 70;
+m[0][1].calificacion= 3.2;
+
+strcpy(m[1][0].nombre, "FP");
+m[1][0].curso = 1;
+m[1][0].semestre = 2;
+m[1][0].nmatriculaciones = 30;
+m[1][0].calificacion= 9.8;
+
+strcpy(m[1][1].nombre, "SDG");
+m[1][1].curso = 1;
+m[1][1].semestre = 2;
+m[1][1].nmatriculaciones = 27;
+m[1][1].calificacion= 7.5;
+
+estadisticas(m, 2, 2, &media, &minima, &maxima, &promedioMatriculaciones);
+printf("\nMedia de calificaciones: %.2f", media);
+printf("\nMáxima calificación: %.2f", maxima);
+printf("\nMínima calificación: %.2f", minima);
+printf("\nPromedio de matriculaciones: %.2f", promedioMatriculaciones);
+
+return 0;
+}
+
+void estadisticas(Asignatura m[NFIL][NCOL], int nfil, int ncol, float * media, float * minima, float * maxima, float * promedioMatriculaciones){
+int i, j, sumador, sumacal;
+
+*maxima=0;
+*minima=999999999;
+
+for(i=0; i<nfil; i++){
+    for(j=0; j<ncol; j++){
+        sumacal += m[i][j].calificacion;
+        sumador += m[i][j].nmatriculaciones;
+        if(m[i][j].calificacion > *maxima){
+            *maxima = m[i][j].calificacion;
+        }
+        else if(m[i][j].calificacion < *minima){
+            *minima = m[i][j].calificacion;
+        }
+    }
+}
+
+*promedioMatriculaciones = sumador/(nfil*ncol);
+*media = sumacal/(nfil*ncol);
+
+}
