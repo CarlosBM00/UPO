@@ -1,0 +1,104 @@
+/* Usando la estructura Familia definida en el Ejercicio 7.5, definir una función que reciba una familia y la
+modifique eliminando todas las personas cuya edad esté comprendida entre dos valores indicados como parámetros*/
+
+#include <stdio.h>
+#include <string.h>
+#define TAM 100
+
+typedef struct {
+
+ int dia, mes, anyo;
+
+} Fecha;
+
+typedef struct {
+
+ int edad;
+ float altura, peso;
+ char nombre[TAM];
+ char sexo;
+ Fecha nacimiento;
+
+} Persona;
+
+typedef struct{
+
+Persona personas[TAM];
+int numPersonas;
+
+} Familia;
+
+void elimina(Familia q, Persona personas[TAM], int * numero, int max, int min);
+
+int main(){
+Familia qwerty;
+int i, min=30, max=60;
+
+qwerty.numPersonas = 3;
+
+strcpy(qwerty.personas[0].nombre, "Manolo");
+qwerty.personas[0].sexo = 'H';
+qwerty.personas[0].edad = 34;
+qwerty.personas[0].altura = 1.7;
+qwerty.personas[0].peso = 64;
+qwerty.personas[0].nacimiento.dia = 2;
+qwerty.personas[0].nacimiento.mes = 2;
+qwerty.personas[0].nacimiento.anyo = 1987;
+
+strcpy(qwerty.personas[1].nombre, "Pepe");
+qwerty.personas[1].sexo = 'H';
+qwerty.personas[1].edad = 53;
+qwerty.personas[1].altura = 1.86;
+qwerty.personas[1].peso = 79;
+qwerty.personas[1].nacimiento.dia = 8;
+qwerty.personas[1].nacimiento.mes = 5;
+qwerty.personas[1].nacimiento.anyo = 1968;
+
+strcpy(qwerty.personas[2].nombre, "David");
+qwerty.personas[2].sexo = 'H';
+qwerty.personas[2].edad = 23;
+qwerty.personas[2].altura = 1.7;
+qwerty.personas[2].peso = 61;
+qwerty.personas[2].nacimiento.dia = 6;
+qwerty.personas[2].nacimiento.mes = 9;
+qwerty.personas[2].nacimiento.anyo = 1998;
+
+printf("\n\nFamilia de %d miembros: \n\n", qwerty.numPersonas);
+printf("Nombre\tSexo\tEdad\tAltura\t\tPeso\t\tNacimiento\n");
+for(i=0;i<qwerty.numPersonas;i++){
+ printf("%s\t%c\t%d\t%f\t%f\t%d-%d-%d\n", qwerty.personas[i].nombre, qwerty.personas[i].sexo,
+        qwerty.personas[i].edad, qwerty.personas[i].altura, qwerty.personas[i].peso,
+        qwerty.personas[i].nacimiento.dia, qwerty.personas[i].nacimiento.mes,
+        qwerty.personas[i].nacimiento.anyo );
+
+}
+printf("\nEliminamos aquellos cuya edad se encuentre entre %d y %d:", min, max);
+
+elimina(qwerty, qwerty.personas, &qwerty.numPersonas, max, min);
+
+printf("\n\nFamilia de %d miembros: \n\n", qwerty.numPersonas);
+for(i=0;i<qwerty.numPersonas;i++){
+ printf("%s\t%c\t%d\t%f\t%f\t%d-%d-%d\n", qwerty.personas[i].nombre, qwerty.personas[i].sexo,
+        qwerty.personas[i].edad, qwerty.personas[i].altura, qwerty.personas[i].peso,
+        qwerty.personas[i].nacimiento.dia, qwerty.personas[i].nacimiento.mes,
+        qwerty.personas[i].nacimiento.anyo );
+
+}
+
+return 0;
+}
+
+void elimina(Familia q, Persona personas[TAM], int * numero, int max, int min){
+int i, j;
+i=0;
+while (i<*numero){
+        if(personas[i].edad>min && personas[i].edad<max){
+            for(j=i; j<*numero ; j++){
+                personas[j]=personas[j+1];
+            }
+            (*numero)--;
+        }else{
+        i++;
+        }
+    }
+}
