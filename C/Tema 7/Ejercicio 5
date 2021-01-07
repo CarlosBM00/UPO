@@ -1,0 +1,73 @@
+/* Definir una estructura llamada Familia que contenga como campos un vector de personas (usar una de las
+estructuras de tipo Persona definidas en el Tema 7 de EB) y el número de elementos útil de dicho vector. Escribir un
+programa completo en el que se cree una variable de tipo Familia, se rellene con datos leídos desde teclado y se imprima
+finalmente su contenido por pantalla.*/
+
+#include <stdio.h>
+
+#define TAM 100
+
+typedef struct {
+
+ int dia, mes, anyo;
+
+} Fecha;
+
+typedef struct {
+
+ int edad;
+ float altura, peso;
+ char nombre[TAM];
+ char sexo;
+ Fecha nacimiento;
+
+} Persona;
+
+typedef struct{
+
+Persona personas[TAM];
+int numPersonas;
+
+} Familia;
+
+int main(){
+
+Familia qwerty;
+int i;
+
+printf("Número de familiares: ");
+scanf("%d", &qwerty.numPersonas);
+
+for(i=0; i<qwerty.numPersonas; i++){
+    printf("\nPersona número %d: \n", i);
+    printf("Nombre: ");
+    scanf("%s", qwerty.personas[i].nombre);
+    printf("Sexo: ");
+    fflush(stdin);
+    scanf("%c", &qwerty.personas[i].sexo);
+    printf("Edad: ");
+    scanf("%d", &qwerty.personas[i].edad);
+    printf("Altura: ");
+    scanf("%f", &qwerty.personas[i].altura);
+    printf("Peso: ");
+    scanf("%f", &qwerty.personas[i].peso);
+    printf("Fecha de nacimiento: ");
+    printf("Día: ");
+    scanf("%d", &qwerty.personas[i].nacimiento.dia);
+    printf("Mes: ");
+    scanf("%d", &qwerty.personas[i].nacimiento.mes);
+    printf("Año: ");
+    scanf("%d", &qwerty.personas[i].nacimiento.anyo);
+}
+
+printf("\n\nFamilia de %d miembros: \n\n", qwerty.numPersonas);
+printf("Nombre\tSexo\tEdad\tAltura\tPeso\t\tNacimiento\n");
+for(i=0;i<qwerty.numPersonas;i++){
+ printf("%s\t%c\t%d\t%f\t%f\t%d%-d%-d\n", qwerty.personas[i].nombre, qwerty.personas[i].sexo,
+        qwerty.personas[i].edad, qwerty.personas[i].altura, qwerty.personas[i].peso,
+        qwerty.personas[i].nacimiento.dia, qwerty.personas[i].nacimiento.mes,
+        qwerty.personas[i].nacimiento.anyo );
+}
+
+return 0;
+}
