@@ -1,0 +1,41 @@
+/* Escribir un programa que solicite por teclado a un alumno las notas que ha obtenido en las asignaturas del
+grado y las almacene en un fichero de texto. Para ello, se preguntará primero al alumno cuántas asignaturas desea
+introducir. Si el alumno no se ha examinado aun de una asignatura introducirá un valor -1 */
+
+#include <stdio.h>
+#define TAM 100
+#define RUTA_ENTRADA "C:\\Users\\Carlos\\Desktop\\Ficheros\\Ejercicio1.txt"
+
+int main(){
+int i, n;
+char asignatura[TAM]="";
+float nota;
+
+printf("Numero de asignaturas a introducir: ");
+scanf("%d", &n);
+
+FILE * f;
+
+f = fopen(RUTA_ENTRADA, "w");
+
+if (f == NULL)
+ printf("El fichero no se ha podido abrir.\n");
+else {
+    for(i=0;i<n;i++){
+        printf("Asignatura %d: ", i+1);
+        scanf("%s",asignatura);
+
+        fprintf(f,"%s\t", asignatura );
+
+        printf("Nota de la asignatura %d: ", i+1);
+        scanf("%f",&nota);
+
+        fprintf(f,"%.2f", nota);
+
+        fprintf(f, "\n");
+    }
+}
+fclose(f);
+
+return 0;
+}
