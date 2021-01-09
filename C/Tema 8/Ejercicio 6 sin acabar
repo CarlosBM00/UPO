@@ -1,0 +1,66 @@
+/*Escribir un programa que lea un fichero de libros (con el formato del Ejercicio 8.5) y guarde los libros leídos
+en un vector de estructuras de tipo Libro. A continuación, ordenar ascendentemente el vector por el año de publicación de
+los libros y escribir en un fichero aparte los libros una vez ordenados (con el mismo formato de fichero). Utilice funciones
+para cada uno de estos pasos.*/
+
+#include <stdio.h>
+#define TAM 100
+#define RUTA_ENTRADA "C:\\Users\\Carlos\\Desktop\\Ficheros\\ejercicio5.txt"
+
+typedef struct{
+
+char titulo[TAM];
+char autor[TAM];
+int publicacion, npaginas;
+
+}Libro;
+
+void guardarLibros(Libro biblio[TAM], int * nlibros);
+void ordenarLibros(Libro biblio[TAM], int nlibros);
+void escribirLibros(Libro biblio[TAM], int nlibros);
+
+int main(){
+int nlibros;
+
+Libro biblioteca[TAM];
+
+guardarLibros(biblioteca, &nlibros);
+
+ordenarLibros(biblioteca, nlibros);
+
+return 0;
+}
+
+void guardarLibros(Libro biblio[TAM], int * nlibros){
+int i;
+FILE * f;
+
+f = fopen(RUTA_ENTRADA, "r");
+if(f == NULL)
+    printf("No se pudo abrir el archivo");
+else{
+    i = 0;
+    fscanf(f, "%d", nlibros);
+    for(i=0; i<*nlibros; i++){
+        fscanf(f,"%s", biblio[i].titulo);
+        fscanf(f,"%s", biblio[i].autor);
+        fscanf(f,"%d", &biblio[i].publicacion);
+        fscanf(f,"%d", &biblio[i].npaginas);
+    }
+    fclose(f);
+    }
+}
+
+void ordenarLibros(Libro biblio[TAM], int nlibros){
+int i;
+Libro aux;
+
+for(i=0; i<nlibros; i++){
+    if(biblio[i].publicacion > biblio[i+1].publicacion){
+        aux = biblio[i];
+        biblio[i] = biblio[i+1];
+        biblio[i+1] = aux;
+    }
+}
+
+}
