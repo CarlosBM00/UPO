@@ -1,0 +1,64 @@
+/*Escribir un programa que lea un fichero de notas de asignaturas (con el formato del Ejercicio 8.1) y calcule la
+nota media de las asignaturas evaluadas (excluyendo las de calificación igual a -1) y el porcentaje de asignaturas aprobadas
+con respecto al total de asignaturas incluidas en el fichero. */
+
+#include <stdio.h>
+#define TAM 100
+#define RUTA_ENTRADA "C:\\Users\\Carlos\\Desktop\\Ficheros\\ejercicio1.txt"
+
+float media (float v[TAM], int TAMV);
+float porcentaje (float v[TAM], int TAMV);
+
+int main(){
+int n;
+float notas[TAM];
+char temp[TAM][TAM];
+
+
+FILE * f;
+
+f = fopen(RUTA_ENTRADA, "r");
+if(f == NULL)
+    printf("El achivo no se pudo abrir");
+else{
+
+    n=0;
+    fscanf(f, "%s\t%f", temp[n], &notas[n]);
+    while(!feof(f)){
+        n++;
+        fscanf(f, "%s\t%f", temp[n], &notas[n]);
+    }
+    n++;
+}
+fclose(f);
+
+printf("\nNúmero de asignaturas: %d\n", n);
+printf("\nNota media: %.2f\n", media(notas, n));
+printf("\nPorcentaje de asignaturas aprobadas: %.0f \n", porcentaje(notas, n));
+return 0;
+}
+
+float media (float v[TAM], int TAMV){
+int n;
+float sum=0;
+
+for(n=0; n<TAMV; n++){
+    if(v[n]>=0)
+        sum = sum + v[n];
+}
+
+return sum/TAMV;
+}
+
+float porcentaje (float v[TAM], int TAMV){
+int i;
+float cont = 0;
+
+for(i=0; i<TAMV ; i++){
+    if(v[i]>=5)
+        cont++;
+}
+
+
+return (cont/TAMV)*100;
+}
