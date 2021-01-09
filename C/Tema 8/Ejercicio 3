@@ -1,0 +1,43 @@
+/*Escribir un programa que lea un fichero de notas de asignaturas (con el formato del Ejercicio 8.1), las cargue
+en un vector de estructuras de tipo Asignatura y las imprima por pantalla. El tipo Asignatura debe ser una estructura con
+dos campos: una cadena que contiene el nombre de la asignatura y un número real que contiene una calificación numérica.*/
+
+#include <stdio.h>
+#define TAM 100
+#define RUTA_ENTRADA "C:\\Users\\Carlos\\Desktop\\Ficheros\\ejercicio1.txt"
+
+
+typedef struct{
+
+char nombre[TAM];
+float nota;
+
+} Asignatura;
+
+int main(){
+int n, i;
+Asignatura vector[TAM];
+
+FILE * f;
+
+f = fopen(RUTA_ENTRADA, "r");
+
+if(f == NULL)
+    printf("El archivo no se pudo abrir");
+else{
+    n=0;
+    fscanf(f, "%s\t%f", vector[n].nombre, &vector[n].nota);
+    while(!feof(f)){
+        n++;
+        fscanf(f, "%s\t%f", vector[n].nombre, &vector[n].nota);
+    }
+}
+
+for(i=0; i<n+1; i++){
+    printf("\nAsignatura %d: ", i);
+    printf("\n Nombre: %s ", vector[i].nombre );
+    printf("\n Nota: %.2f \n\n", vector[i].nota);
+}
+
+return 0;
+}
