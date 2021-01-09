@@ -19,10 +19,6 @@ if(f == NULL)
     printf("Error al abrir el archivo");
 else{
 
-
-
-
-
 n = 0;
 fscanf(f, "%s\t%f", temp[n], &vector[n]);
 while(!feof(f)){
@@ -32,8 +28,6 @@ while(!feof(f)){
 
 
 fclose(f);
-
-
 
 for(i=0;i<n+1;i++){
     printf("\n%.2f ", vector[i]);
