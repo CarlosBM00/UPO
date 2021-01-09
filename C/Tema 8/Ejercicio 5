@@ -1,0 +1,72 @@
+/*Escribir un programa que solicite por teclado al usuario datos de libros: título, autores, año de publicación y
+número de páginas. Defina una estructura Libro con los campos necesarios y use una tabla de estructuras para almacenar
+los datos leídos desde teclado. Una vez leídos todos los libros, escribir en un fichero de texto el número de libros introducidos
+y, a continuación, todos los datos de cada uno. Crear una función para leer los datos de los libros y otra para escribir los
+datos de libros en el fichero.*/
+
+#include <stdio.h>
+#define TAM 100
+#define RUTA_SALIDA "C:\\Users\\Carlos\\Desktop\\Ficheros\\ejercicio5.txt"
+
+typedef struct{
+
+char titulo[TAM];
+char autor[TAM];
+int publicacion, npaginas;
+
+}Libro;
+
+int leerLibros(Libro biblio[TAM]);
+void escribirFichero (Libro biblio[TAM], int tam);
+
+int main(){
+int n;
+Libro biblioteca[TAM];
+
+n = leerLibros(biblioteca);
+escribirFichero(biblioteca, n);
+
+return 0;
+}
+
+int leerLibros(Libro biblio[TAM]){
+int resp = 1, n = 0;
+
+while(resp != 0){
+    printf("\nNumero de libros en la biblioteca: %d\n", n);
+
+    printf("\nTitulo: ");
+    scanf("%s", biblio[n].titulo);
+    printf("\nAutor: ");
+    scanf("%s", biblio[n].autor);
+    printf("\nAño de publicacion: ");
+    scanf("%d", &biblio[n].publicacion);
+    printf("\nNumero de paginas: ");
+    scanf("%d", &biblio[n].npaginas);
+
+    n++;
+    printf("\n\n¿Desea añadir mas libros? 0 = NO   1 = SI ");
+    scanf("%d", &resp);
+    }
+return n;
+}
+
+void escribirFichero (Libro biblio[TAM], int tam){
+int i;
+FILE * f;
+
+f = fopen(RUTA_SALIDA,"w");
+if(f == NULL)
+    printf("No se pudo abrir el archivo");
+else{
+    fprintf(f, "%d\n", tam);
+    for(i=0; i<tam; i++){
+       fprintf(f, "%s\n", biblio[i].titulo);
+       fprintf(f, "%s\n", biblio[i].autor);
+       fprintf(f, "%d\n", biblio[i].publicacion);
+       fprintf(f, "%d\n", biblio[i].npaginas);
+    }
+}
+fclose(f);
+
+}
