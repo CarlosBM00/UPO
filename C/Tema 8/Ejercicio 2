@@ -1,0 +1,46 @@
+/* Escribir un programa que lea un fichero de notas de asignaturas, las cargue en un vector y las imprima por
+pantalla. Este programa deberá ser compatible con el formato de fichero indicado en el Ejercicio 8.1.*/
+
+#include <stdio.h>
+#define NCOL 100
+#define TAM 100
+#define RUTA_ENTRADA "C:\\Users\\Carlos\\Desktop\\Ficheros\\ejercicio1.txt"
+
+int main(){
+int i, n;
+float vector[TAM];
+char temp[50][50];
+
+FILE* f;
+
+f = fopen(RUTA_ENTRADA, "r");
+
+if(f == NULL)
+    printf("Error al abrir el archivo");
+else{
+
+
+
+
+
+n = 0;
+fscanf(f, "%s\t%f", temp[n], &vector[n]);
+while(!feof(f)){
+    n++;
+    fscanf(f, "%s\t%f", temp[n], &vector[n]);
+}
+
+
+fclose(f);
+
+
+
+for(i=0;i<n+1;i++){
+    printf("\n%.2f ", vector[i]);
+}
+
+
+}
+
+return 0;
+}
