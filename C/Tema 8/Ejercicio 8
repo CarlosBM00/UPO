@@ -8,25 +8,43 @@ que la suma de la matriz que tiene menor número de columnas.*/
 
 #define TAM 100
 
+typedef struct{
+
+int nfil, ncol;
+float numeros[TAM];
+
+} Matriz;
+
 void leerFichero (char nombreFichero[TAM], int * numMatrices);
 
 int main(){
 int numMatrices;
-char nombre[TAM] = ""
+
+leerFichero("ejercicio7.txt", &numMatrices);
 
 return 0;
 }
 
 void leerFichero (char nombreFichero[TAM], int * numMatrices){
+int nfil, ncol, i, j ,n;
 
 FILE * f;
 
 f=fopen(nombreFichero, "r");
-if(f == NULL)
-    printf("No se pudo abrir el archivo");
-else{
-    //fscanf(nombrefichero,);
 
-}
+    if(f == NULL)
+        printf("No se pudo abrir el archivo");
+    else{
+        fscanf(f, "%d" , numMatrices );
 
+        for(i=0; i < *numMatrices ; i++){
+            fscanf(f, "%d" , &nfil );
+            fscanf(f, "%d" , &ncol );
+            for(i=0; i<nfil ; i++){
+                for(j=0; j<ncol ; j++){
+
+                }
+            }
+        }
+    }
 }
