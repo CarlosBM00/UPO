@@ -1,0 +1,71 @@
+/* Escribir un programa que solicite por teclado al usuario datos de matrices de números reales, cada una con
+sus dimensiones (es decir, cada matriz podrá tener un número de filas y columnas distinto). Almacenar dichas matrices
+leídas del teclado en un fichero de texto con el siguiente formato (usar funciones para cada paso) */
+
+#include <stdio.h>
+#define NCOL 100
+#define NFIL 100
+#define RUTA_SALIDA "C:\\Users\\Carlos\\Desktop\\Ficheros\\ejercicio7.txt"
+
+void solicitarMatriz(float m[NFIL][NCOL] ,int * nfil, int * ncol);
+void escribirMatriz(float m[NFIL][NCOL] ,int nfil, int ncol);
+
+int main(){
+int nfil, ncol, n, i;
+float matriz[NFIL][NCOL];
+
+FILE * f;
+
+f = fopen(RUTA_SALIDA, "w");
+if(f == NULL)
+    printf("No se pudo abrir el archivo");
+else{
+    printf("Numero de matrices: ");
+    scanf("%d", &n);
+
+    fprintf(f, "%d\n", n);
+    fclose(f);
+    for(i=0; i<n; i++){
+        solicitarMatriz(matriz, &nfil, &ncol);
+        escribirMatriz(matriz, nfil, ncol);
+    }
+}
+
+
+return 0;
+}
+
+void solicitarMatriz(float m[NFIL][NCOL] ,int * nfil, int * ncol){
+int i, j;
+
+    printf("\nNúmero de filas:");
+    scanf("%d", nfil);
+    printf("\nNúmero de columnas:");
+    scanf("%d", ncol);
+
+    for(i=0;i<*nfil;i++){
+        for(j=0;j<*ncol;j++){
+           printf("\nPosición (%d,%d):", i, j);
+           scanf("%f", &m[i][j]);
+        }
+    }
+}
+
+void escribirMatriz(float m[NFIL][NCOL] ,int nfil, int ncol){
+int i, j;
+
+FILE * g;
+
+g = fopen(RUTA_SALIDA, "a");
+
+        fprintf(g, "%d %d\n", nfil, ncol);
+        for(i=0; i<nfil; i++){
+            for(j=0; j<ncol;j++){
+                fprintf(g, "%.1f ", m[i][j]);
+                if(j==ncol-1)
+                    fprintf(g, "\n");
+            }
+        }
+        fclose(g);
+    }
+
