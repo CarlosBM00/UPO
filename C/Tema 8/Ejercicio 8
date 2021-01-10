@@ -1,0 +1,32 @@
+/* Escribir una función que reciba el nombre de un fichero de matrices (con el formato del Ejercicio 8.7), lo lea
+y devuelva, por una parte, un vector de estructuras de tipo Matriz con las matrices leídas y, por otra parte, la media y la
+desviación típica de las sumas de los elementos de las matrices del fichero y si existe alguna matriz cuya suma sea mayor
+que la suma de la matriz que tiene menor número de columnas.*/
+
+#include <stdio.h>
+#include <string.h>
+
+#define TAM 100
+
+void leerFichero (char nombreFichero[TAM], int * numMatrices);
+
+int main(){
+int numMatrices;
+char nombre[TAM] = ""
+
+return 0;
+}
+
+void leerFichero (char nombreFichero[TAM], int * numMatrices){
+
+FILE * f;
+
+f=fopen(nombreFichero, "r");
+if(f == NULL)
+    printf("No se pudo abrir el archivo");
+else{
+    //fscanf(nombrefichero,);
+
+}
+
+}
