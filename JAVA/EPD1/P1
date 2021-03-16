@@ -1,0 +1,55 @@
+
+import poo.io.*;
+
+public class EPD1_P1 {
+
+    public static void main(String[] args) {
+        double a, b, c, d = 1;
+
+        System.out.println("Introduzca dos números ");
+        System.out.print("Primer número: ");
+        a = IO.readNumber();
+        System.out.print("Segundo número: ");
+        b = IO.readNumber();
+
+        System.out.println("Los números introducidos son: A = " + a + " y B = " + b + "\n");
+
+        while (d != 0) {
+
+            System.out.println("¿Qué operación quiere realizar?\n");
+            System.out.println("1. Sumar los números");
+            System.out.println("2. Restar los números");
+            System.out.println("3. Multiplicar los números ");
+            System.out.println("4. Dividir los números");
+            
+            c = IO.readNumber();
+
+            switch ((int) c) {
+                case 1:
+                    c = a + b;
+                    System.out.println("La suma es " + c);
+                    d = 0;
+                    break;
+                case 2:
+                    c = a - b;
+                    System.out.println("La resta es " + c);
+                    d = 0;
+                    break;
+                case 3:
+                    c = a * b;
+                    System.out.println("La multiplicación es " + c);
+                    d = 0;
+                    break;
+                case 4:
+                    c = a / b;
+                    System.out.println("La división es " + c);
+                    d = 0;
+                    break;
+                default:
+                    System.out.println("Opción incorrecta");
+                    d = 1;
+                    break;
+            }
+        }
+    }
+}
