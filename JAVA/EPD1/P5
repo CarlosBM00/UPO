@@ -1,0 +1,67 @@
+/* Escriba un programa que pida al usuario el día, mes (en formato numérico) y año, y le muestre por pantalla dicha fecha indicando
+el mes por su nombre (por ejemplo, si se indica día 1, mes 3 y año 2011, el programa tiene que devolver el resultado “1 de Marzo de
+2011”) */
+
+import poo.io.*;
+
+public class EPD1_P5 {
+
+    public static void main(String[] args) {
+
+        String nombreMes = "";
+
+        System.out.print("Día:");
+        int dia = (int) IO.readNumber();
+
+        System.out.print("Mes:");
+        int mes = (int) IO.readNumber();
+
+        System.out.print("Año:");
+        int year = (int) IO.readNumber();
+
+        switch (mes) {
+
+            case 1:
+                nombreMes = "Enero";
+                break;
+            case 2:
+                nombreMes = "Febrero";
+                break;
+            case 3:
+                nombreMes = "Marzo";
+                break;
+            case 4:
+                nombreMes = "Abril";
+                break;
+            case 5:
+                nombreMes = "Mayo";
+                break;
+            case 6:
+                nombreMes = "Junio";
+                break;
+            case 7:
+                nombreMes = "Julio";
+                break;
+            case 8:
+                nombreMes = "Agosto";
+                break;
+            case 9:
+                nombreMes = "Septiembre";
+                break;
+            case 10:
+                nombreMes = "Octubre";
+                break;
+            case 11:
+                nombreMes = "Noviembre";
+                break;
+            case 12:
+                nombreMes = "Diciembre";
+                break;
+
+        }
+        
+        System.out.println(dia + " de " + nombreMes + " de " + year);
+
+    }
+
+}
