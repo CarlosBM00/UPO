@@ -1,3 +1,4 @@
+/* Escriba un programa que pida al usuario dos números enteros. Una vez obtenidos los dos números, el programa mostrará al usuario una serie de opciones numeradas (un menú), y esperará que el usuario teclee la opción deseada. Una vez que el usuario haya escogido la opción, se realizará la operación con los números asociada a dicha opción y se ofrecerá el resultado de dicha operación por pantalla. En el caso de que el usuario seleccione una opción que no aparece en el menú se le indicará que la opción es incorrecta, y se volverá a mostrar el menú para que el usuario seleccione de nuevo una operación. */ 
 
 import poo.io.*;
 
