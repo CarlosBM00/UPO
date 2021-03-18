@@ -1,0 +1,30 @@
+/* Elija un número como clave de seguridad. Escriba un programa que pida al usuario que introduzca la clave. Si el usuario introduce
+la clave correctamente el programa informará a éste por pantalla y terminará. Si no, se pedirá de nuevo la clave hasta que el usuario
+acierte */
+
+import poo.io.*;
+
+public class EPD1_P6 {
+ 
+    public static void main(String[] args) {
+        int a = 0;
+        
+        System.out.print("Introduzca una clave: ");
+        String clave = IO.readLine();
+        
+        while (a != 1){
+            System.out.print("Contraseña: ");
+            String contraseña = IO.readLine();
+            
+            if (!contraseña.equals(clave)){
+                System.out.println("Contraseña incorrecta");
+            }else{
+                System.out.println("Contraseña correcta");
+                a = 1;
+            }
+            
+        }
+        
+    }
+    
+}
