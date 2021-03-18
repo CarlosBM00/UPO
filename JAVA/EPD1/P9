@@ -1,0 +1,31 @@
+/* Escriba un programa que pida números hasta que el usuario introduzca el cero. Una vez introducido el cero, el programa deberá
+imprimir en pantalla el valor medio y la varianza de los números que se han ido introduciendo, excluyendo el cero */
+import poo.io.*;
+
+public class EPD1_P9 {
+
+    public static void main(String[] args) {
+        int media, varianza, sum = 0, sum2 = 0, contador = 0, a = 1;
+
+        while (a != 0) {
+
+            System.out.print("Número " + contador + " : ");
+            int num = (int) IO.readNumber();
+
+            if (num == 0) {
+                a = 0;
+            } else {
+                contador++;
+                sum = sum + num;
+                sum2 = sum + (sum * sum);
+            }
+        }
+
+        media = (sum / contador);
+        varianza = (sum / contador) - media;
+
+        System.out.println("Media: " + media);
+        System.out.println("Varianza: " + varianza);
+    }
+
+}
