@@ -1,0 +1,34 @@
+/* Escribir un programa que pida al usuario una contraseña fija establecida como una constante en el programa. El programa dará
+3 oportunidades al usuario para averiguarla. Si el usuario averigua la contraseña se imprimirá en pantalla el mensaje “Acceso permitido” y terminará el programa. Si el usuario consume las tres oportunidades sin acertar la contraseña, se imprimirá en pantalla “Acceso
+denegado” y terminará el programa */
+
+import poo.io.*;
+
+public class EPD1_P11 {
+
+    public static final int PASS = 25634;
+
+    public static void main(String[] args) {
+        int i = 1;
+
+        while (i != 0 && i < 4) {
+            System.out.print("Introduzca la contraseña:");
+            int b = (int) IO.readNumber();
+
+            if (b == PASS) {
+                i = 0;
+                System.out.println("Contraseña correcta");
+                System.out.println("Acceso permitido");
+            } else {
+                System.out.println("Contraseña incorrecta. Quedan " + (3 - i) + " intentos");
+                i++;
+            }
+        }
+
+        if (i == 4) {
+            System.out.println("Acceso denegado");
+        }
+
+    }
+
+}
