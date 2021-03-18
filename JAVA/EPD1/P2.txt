@@ -1,3 +1,5 @@
+/* Complete el siguiente programa que toma un parámetro que representa el radio de un círculo (de tipo double), calcule el diámetro,
+el área y la longitud de la circunferencia, y que muestre por pantalla dichos valores. Compílelo y ejecútelo */
 
 public class EPD1_P2 {
 
