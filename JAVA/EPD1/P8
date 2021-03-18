@@ -1,0 +1,23 @@
+/*Escriba un programa que indique si el año introducido por un usuario es o no bisiesto. Los años bisiestos son múltiplos de cuatro,
+sin embargo, los múltiplos de 100 sólo son bisiestos cuando a la vez son múltiplos de 400 (por ejemplo 1800 no es bisiesto, mientras
+que 2000 si lo es)*/
+
+import poo.io.*;
+
+public class EPD1_P8 {
+
+    public static void main(String[] args) {
+        System.out.print("Año: ");
+        double year = IO.readNumber();
+
+        if (year % 4 == 0 && year % 100 != 0) {
+            System.out.println(year + " es un año bisiesto");
+        } else if (year % 100 == 0 && year % 400 == 0) {
+            System.out.println(year + " es un año bisiesto");
+        } else {
+            System.out.println(year + " NO es un año bisiesto");
+        }
+
+    }
+
+}
