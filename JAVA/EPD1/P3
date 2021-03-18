@@ -1,0 +1,28 @@
+/* Escriba un programa similar al anterior, pero que calcule el área y el perímetro de un cuadrado (conociendo el lado) y un triángulo
+recto (conociendo su base y altura) */
+
+public class EPD1_P3 {
+
+    public static void main(String[] args) {
+        double ladoCuadrado = Float.parseFloat(args[0]);
+        double baseTriangulo = Float.parseFloat(args[1]);
+        double alturaTriangulo = Float.parseFloat(args[2]);
+        
+        double areaCuadrado, perimetroCuadrado, areaTriangulo, perimetroTriangulo;
+        
+        areaCuadrado = ladoCuadrado * ladoCuadrado;
+        perimetroCuadrado = ladoCuadrado * 4;
+        areaTriangulo = (baseTriangulo * alturaTriangulo)/2;
+        perimetroTriangulo = baseTriangulo * 3;
+        
+        System.out.println("Área del cuadrado: " + areaCuadrado);
+
+        System.out.println("Perímetro del cuadrado: " + perimetroCuadrado);
+        
+        System.out.println("Área del triángulo: " + areaTriangulo);
+        
+        System.out.println("Área del triángulo: " + perimetroTriangulo);
+
+        
+    }
+}
