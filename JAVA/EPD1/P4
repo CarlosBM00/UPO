@@ -1,0 +1,26 @@
+/* Escriba un programa que simule el funcionamiento de un termostato. Para ello, se le pedirá al usuario la temperatura actual, y la
+temperatura deseada por debajo de la cual se activará la calefacción (se muestra un mensaje por pantalla pidiendo su activación) y
+por encima de la cual se activará el aire acondicionado frío (un mensaje por pantalla similar al caso anterior). Si la temperatura actual
+coincide con la temperatura se indicará un mensaje por pantalla advirtiendo de ello */
+
+import poo.io.*;
+
+public class EPD1_P4 {
+
+    public static void main(String[] args) {
+
+        System.out.print("Temperatura actual: ");
+        float a = (float) IO.readNumber();
+        System.out.print("Temperatura deseada: ");
+        float b = (float) IO.readNumber();
+        
+        if (a>b){
+            System.out.println("La temperatura actual es mayor a la deseada, se activará el aire acondicionado frío");
+        }else if(a<b){
+            System.out.println("La temperatura actual es menor a la deseada, por favor, active la calefacción");
+        }else{
+            System.out.println("La temperatura actual es la deseada"); 
+        }
+    }
+
+}
